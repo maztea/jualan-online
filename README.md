@@ -10,6 +10,16 @@ Proyek ini adalah sistem manajemen inventaris dan finansial terpusat yang diranc
 - **Laporan Finansial:** Perhitungan margin keuntungan dan profit/loss per transaksi secara real-time.
 - **Dukungan Multi-Channel:** Manajemen toko untuk berbagai platform marketplace.
 
+---
+
+## ⚠️ PENTING: PANDUAN IMPLEMENTASI
+
+**WAJIB BACA `GEMINI.md`** sebelum memulai implementasi fitur, service baru, atau melakukan perencanaan (Planning).
+
+Seluruh pengembang **WAJIB** mengikuti **Standard Implementation Pattern** yang didefinisikan di dalam `GEMINI.md` untuk menjaga konsistensi arsitektur, struktur folder, dan standar pengkodean di seluruh microservices.
+
+---
+
 ## 🏗️ Arsitektur Sistem
 
 Sistem ini dibangun menggunakan arsitektur **Microservices** yang bersifat *event-driven*:

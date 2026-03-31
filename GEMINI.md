@@ -12,7 +12,7 @@ This project is currently in the **discovery and design stage**. It holds resear
 ## 🏗️ Planned Architecture (Blueprint)
 *As specified in `PRD.md`:*
 - **Architecture**: Microservices (Auth, Store, Inventory, Procurement, Sales, Finance).
-- **Backend**: Go (Golang) with Echo Framework.
+- **Backend**: Go (Golang) with Gin Framework.
 - **Persistence**: PostgreSQL (Isolation per service/database).
 - **Caching & Messaging**: Redis (Streams for Event-Driven).
 - **API Gateway**: Traefik with path-based routing.
@@ -46,6 +46,7 @@ Setiap microservice baru harus mengikuti struktur folder dan layer berikut:
 ## 📜 Mandatory Instructions
 - **BACA GEMINI.md**: Selalu baca file ini sebelum membuat Plan atau mulai Implementasi fitur/service baru.
 - **Ikuti Pola**: Jangan menyimpang dari pola implementasi yang sudah ditetapkan di atas untuk menjaga konsistensi codebase.
+- **Base Image**: Gunakan `golang:1.26-alpine` sebagai base image builder untuk semua microservice backend (Golang).
 - **Automated Verification**: Setiap service baru wajib memiliki unit test pada layer service untuk memvalidasi business logic utama.
 - **Git Workflow**: Gunakan `git worktree` untuk setiap fitur baru guna menjaga kebersihan directory utama.
 
