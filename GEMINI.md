@@ -21,7 +21,9 @@ This project is currently in the **discovery and design stage**. It holds resear
 
 ## 🛠️ Usage & Future Development
 1.  **Reference the PRD**: Use `PRD.md` as the "Source of Truth" for any implementation tasks.
-2.  **Implementation Phase**: When starting the implementation, create subdirectories for each microservice (e.g., `/services/auth-service`, `/services/inventory-service`) following the Tech Stack specified in the PRD.
+2.  **Implementation Phase**: 
+    - **Git Workflow**: Selalu gunakan `git worktree` untuk setiap memulai implementasi fitur baru guna menjaga kebersihan *working directory* utama.
+    - Create subdirectories for each microservice (e.g., `/services/auth-service`, `/services/inventory-service`) following the Tech Stack specified in the PRD.
 3.  **CI/CD**: Follow the deployment strategy outlined in Section 6 of the PRD for automated linting, testing, and rolling updates.
 
 ---
