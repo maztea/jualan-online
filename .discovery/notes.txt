@@ -1,0 +1,13 @@
+saya memiliki usaha penjualan barang di beberapa toko online / marketplace (shopee, tiktok shop, tokopedia, blibli, lazada), saya memiliki kesulitan / problem dengan pengaturan stok barang yang tersedia dan tidak memiliki catatan finansial apakah usaha yang saya jalankan menghasilkan profit atau tidak. Saya menginginkan untuk memiliki software yang dapat membantu mencatat administrasi terkait usaha penjualan saya agar dapat memecahkan problem yang saya hadapi.
+
+kebutuhan fitur software : 
+- mencatat pembelian barang dari online marketplace (shopee, tiktok shop, tokopedia, alfagift)
+- mencatat penerimaan pembelian (harga pembelian diambil untuk tracking modal stok dan margin dari penjualan)
+- tracking stok barang
+- mencatat pengeluaran barang
+- mencatat penerimaan retur barang
+- melihat report terkait pembelian
+- melihat report terkait penjualan
+- melihat report terkait stok barang
+- manage user
+- manage toko online yang digunakan untuk kegiatan usaha

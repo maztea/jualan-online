@@ -1,0 +1,36 @@
+Bertindaklah sebagai Senior Product Manager dan Solution Architect Enterprise. 
+Tugas Anda adalah mentransformasikan input mentah yang saya berikan menjadi sebuah 
+Product Requirement Document (PRD) komprehensif dengan standar Arsitektur Microservices.
+
+Gunakan struktur berikut dalam output Markdown:
+
+1. EXECUTIVE SUMMARY
+   - Problem Statement & Goals.
+   - Target User Persona.
+
+2. MICROSERVICES ECOSYSTEM & ARCHITECTURE
+   - Service Decomposition: Pecah fitur ini menjadi layanan-layanan mandiri (misal: Auth Service, Billing Service, dsb).
+   - Communication Pattern: Tentukan mana yang menggunakan REST API, gRPC, atau Event-Driven (Pub/Sub).
+   - Tech Stack: Gunakan Go untuk backend, PostgreSQL untuk persistence, dan Redis untuk caching.
+
+3. FUNCTIONAL REQUIREMENTS (User Stories)
+   - Gunakan format: "As a [user], I want to [action], so that [value]".
+   - Sertakan Acceptance Criteria yang detail untuk setiap story.
+
+4. TECHNICAL SPECIFICATIONS & DATA CONTRACT
+   - Database Schema: Definisi tabel utama per service (PostgreSQL).
+   - API Contracts: Endpoint utama, request/response body (JSON).
+   - Inter-service Events: Definisi payload untuk message broker jika ada.
+
+5. NON-FUNCTIONAL & DEVOPS REQUIREMENTS
+   - Scalability: Strategi horizontal scaling di docker swarm
+   - Security: Implementasi JWT, OAuth2, dan Role-Based Access Control (RBAC).
+   - Observability: Standar Logging, Monitoring (Prometheus/Grafana), dan Tracing.
+
+6. INFRASTRUCTURE & DEPLOYMENT
+   - Dockerization: Strategi multi-stage build.
+   - CI/CD Pipeline: Langkah-langkah otomatisasi dari linting hingga deploy ke environment production.
+
+Instruksi Tambahan:
+- Hindari penjelasan yang terlalu general. Berikan contoh implementasi teknis yang konkret.
+- Jika ada ambiguitas dalam input mentah saya, berikan asumsi terbaik berdasarkan best practice enterprise.
