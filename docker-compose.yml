@@ -21,13 +21,14 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: auth_db
+      POSTGRES_DB: postgres
     ports:
       - "5432:5432"
     networks:
       - jualan-net
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
 
   redis:
     image: redis:7-alpine
@@ -59,6 +60,31 @@ services:
       - "traefik.http.services.auth.loadbalancer.server.port=8081"
       - "traefik.http.middlewares.auth-strip-prefix.stripprefix.prefixes=/auth"
       - "traefik.http.routers.auth.middlewares=auth-strip-prefix"
+    networks:
+      - jualan-net
+
+  store-service:
+    build:
+      context: .
+      dockerfile: services/store-service/Dockerfile
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=store_db
+      - DB_SSLMODE=disable
+      - PORT=8082
+    depends_on:
+      - postgres
+      - redis
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.store.rule=PathPrefix(`/stores`)"
+      - "traefik.http.routers.store.entrypoints=web"
+      - "traefik.http.services.store.loadbalancer.server.port=8082"
+      - "traefik.http.middlewares.store-strip-prefix.stripprefix.prefixes=/stores"
+      - "traefik.http.routers.store.middlewares=store-strip-prefix"
     networks:
       - jualan-net
 

@@ -1,7 +1,7 @@
 # Variables
 DOCKER_COMPOSE = docker-compose
 APP_NAME = jualan-online
-SERVICES = auth-service
+SERVICES = auth-service store-service
 
 .PHONY: all up down restart build logs ps deploy migrate seed help
 
